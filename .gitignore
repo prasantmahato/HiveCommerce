@@ -1,1 +1,7 @@
 /node_modules
+auth/node_modules/
+common/node_modules/
+client/node_modules/
+.DS_Store
+auth/.DS_Store
+auth/src/.DS_Store
