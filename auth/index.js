@@ -1,6 +1,6 @@
 // src/index.js
 const express = require('express');
-const dashboardRoutes = require('./src/routes/authRoutes');
+const authRoutes = require('./src/routes/authRoutes');
 
 const app = express();
 
@@ -14,7 +14,7 @@ app.use(express.urlencoded({
 
 
 // Routes
-app.use('/auth', dashboardRoutes);
+app.use('/auth', authRoutes);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
