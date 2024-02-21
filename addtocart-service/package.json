@@ -1,0 +1,14 @@
+{
+  "name": "addtocart-service",
+  "version": "1.0.0",
+  "description": "cart service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "pranav",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
