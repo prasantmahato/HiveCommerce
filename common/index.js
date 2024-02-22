@@ -1,5 +1,6 @@
 const express = require("express");
-const users = require("./USERS"); // Adjust the path based on your file location
+const users = require("./USERS"); 
+const products = require("./PRODUCTS");
 
 const app = express();
 
@@ -55,6 +56,28 @@ app.post("/user", (req, res) => {
         res.status(500).json({ message: "Internal Server Error" });
     }
 });
+
+app.get("/products", (req, res) => {
+    res.send(products);
+})
+
+app.get("/product/:id", (req, res) => {
+    try {
+        const productId = parseInt(req.params.id);
+
+        // Find the product with the given ID
+        const product = products.find((p) => p.id === productId);
+
+        if (!product) {
+            return res.status(404).json({ message: "product not found" });
+        }
+
+        res.status(200).json({ product });
+    } catch (error) {
+        console.error("Error retrieving product:", error);
+        res.status(500).json({ message: "Internal Server Error" });
+    }
+})
 
 const PORT = process.env.PORT || 3005;
 
